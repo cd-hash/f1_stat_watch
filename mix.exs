@@ -22,7 +22,7 @@ defmodule StatWatch.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.8.0"},
-      {:poison, "~> 5.0.0"}
+      {:sweet_xml, "~> 0.6.0"}
     ]
   end
 end
