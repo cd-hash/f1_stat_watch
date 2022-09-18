@@ -28,6 +28,11 @@ defmodule StatWatch do
   end
 
 # [year, round] = get_most_recent_race()
+  def get_most_recent_quali_times do
+    with [year, round] <- get_most_recent_race(),
+         {:ok, response} <- get_quali_times(round, year),
+    do: {:ok, response}, else: (error -> error)
+  end
 
   def get_quali_times(round, year) do
     HTTPoison.get(quali_times_endpoint(round, year))
