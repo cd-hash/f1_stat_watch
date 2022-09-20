@@ -30,8 +30,12 @@ defmodule StatWatch do
 # [year, round] = get_most_recent_race()
   def get_most_recent_quali_times do
     with [year, round] <- get_most_recent_race(),
-         {:ok, response} <- get_quali_times(round, year),
-    do: {:ok, response}, else: (error -> error)
+         {:ok, %HTTPoison.Response{status_code: 200, body: response}} <- get_quali_times(round, year),
+    do: {:ok, response.body}, else: (error -> error)
+  end
+
+  def format_quali_times(response) do
+    response
   end
 
   def get_quali_times(round, year) do
