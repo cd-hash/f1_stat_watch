@@ -1,7 +1,7 @@
 # StatWatch
 
 **TODO: Add description**
-
+[link to api docs](https://documenter.getpostman.com/view/11586746/SztEa7bL#intro)
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
